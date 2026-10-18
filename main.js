@@ -1,6 +1,5 @@
-// The interval is configured in the instance environment and must be used for
-// the matching OBoard interval trigger. The trace itself is always IPv6 UDP,
-// which is the structured SDK equivalent of traceroute6.
+// The run interval is owned by the OBoard interval trigger. The trace itself is
+// always IPv6 UDP, which is the structured SDK equivalent of traceroute6.
 function main(run) {
   const trace = oboard.network.trace({
     server_id: env.TARGET_SERVER,
@@ -28,7 +27,6 @@ function main(run) {
     resolved_ip: trace.resolved_ip,
     reached: trace.reached,
     truncated: trace.truncated,
-    interval: env.INTERVAL,
   })
 
   return {
@@ -40,7 +38,6 @@ function main(run) {
     reached: trace.reached,
     truncated: trace.truncated,
     duration_ms: trace.duration_ms,
-    interval: env.INTERVAL,
     path: path,
     scheduled_at: run.scheduled_at || null,
   }

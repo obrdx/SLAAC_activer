@@ -1,7 +1,7 @@
 {
   "id": "slaac.activer",
   "name": "SLAAC IPv6 路由追踪",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "按 OBoard 定时触发器从指定服务器执行 IPv6 UDP 路由追踪，默认目标为 dns.google。",
   "runtime": "oboard-js",
   "entry": "main.js",
@@ -9,7 +9,6 @@
   "resources": {"servers": {"min": 1, "max": 1, "reason": "在选定服务器上执行 IPv6 路由追踪"}},
   "environment": [
     {"name": "TARGET_SERVER", "type": "server", "label": "探测服务器", "required": true, "filter": ["enrolled", "ipv6"]},
-    {"name": "INTERVAL", "type": "duration", "label": "执行间隔", "description": "请在 OBoard 定时触发器中使用相同的间隔。", "required": true, "min_duration": "1m", "max_duration": "720h", "default": "5m"},
     {"name": "TARGET", "type": "string", "label": "目标域名", "required": true, "max_length": 253, "pattern": "[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?)+", "default": "dns.google"},
     {"name": "MAX_HOPS", "type": "integer", "label": "最大跳数", "min": 1, "max": 30, "default": 30},
     {"name": "QUERIES_PER_HOP", "type": "integer", "label": "每跳探测次数", "min": 1, "max": 3, "default": 3},
