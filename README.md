@@ -2,6 +2,10 @@
 
 这个 OBoard 插件从指定服务器执行 IPv6 UDP 路由追踪，默认目标是 `dns.google`，相当于受控的 `traceroute6 dns.google`。插件只通过 OBoard SDK 访问 Agent，不执行 Shell 命令。
 
+⚠️这是一个快速实现的插件，未经长时间严重
+
+
+
 ## 配置
 
 - `TARGET_SERVER`：选择已注册并具备 IPv6 的服务器。
